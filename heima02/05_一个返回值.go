@@ -11,7 +11,7 @@ func MyFunc01() int {
 }
 
 //给返回值起一个变量名，go推荐写法
-func MyFunc01() (result int) {
+func MyFunc02() (result int) {
 	result = 666
 	return
 }
@@ -20,7 +20,7 @@ func main() {
 	var a int
 	a = MyFunc01()
 
-	b := MyFunc01()
+	b := MyFunc02()
 
 	fmt.Println(a)
 	fmt.Println(b)
