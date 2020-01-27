@@ -1,17 +1,17 @@
-°²×°°üÏÂÔØµØÖ·Îª£º
+å®‰è£…åŒ…ä¸‹è½½åœ°å€ä¸ºï¼š
 https://golang.org/dl/
-Èç¹û´ò²»¿ª¿ÉÒÔÊ¹ÓÃÕâ¸öµØÖ·£º
+å¦‚æœæ‰“ä¸å¼€å¯ä»¥ä½¿ç”¨è¿™ä¸ªåœ°å€ï¼š
 https://golang.google.cn/dl/
-Go °²×°°üÏÂÔØ
+Go å®‰è£…åŒ…ä¸‹è½½
 https://studygolang.com/dl
-±à¼­Æ÷Ô´Âë
+ç¼–è¾‘å™¨æºç 
 http://liteide.org/cn/
-±à¼­Æ÷
+ç¼–è¾‘å™¨
 https://sourceforge.net/projects/liteide/files/
-±à¼­Æ÷
+ç¼–è¾‘å™¨
 https://sourceforge.net/projects/liteide/
-goÖĞÎÄÉçÇø
+goä¸­æ–‡ç¤¾åŒº
 https://studygolang.com/
-goÖĞÎÄÔÚÏßÎÄµµ
+goä¸­æ–‡åœ¨çº¿æ–‡æ¡£
 https://studygolang.com/pkgdoc
 
