@@ -20,6 +20,10 @@ func main() {
 	// go mypkg.TestGroute1()
 	// go mypkg.TestGroute1()
 	// mypkg.TestPipe()
-	mypkg.TestMap()
-	// time.Sleep(5 * time.Second)
+	// mypkg.TestMap()
+	// mypkg.TestMapRoute()
+	// var small mypkg.Person = &mypkg.Small{"111", "222"}
+
+	// small.Say()
+	mypkg.TestTime()
 }
