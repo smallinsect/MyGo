@@ -3,17 +3,17 @@ package main
 
 import (
 	"fmt"
-	"m1-server/player"
+	// "m1-server/player"
 	"math/rand"
 	"time"
 )
 
 func main() {
 	fmt.Println("Hello World!")
-	var p player.Player
+	// var p player.Player
 
 	// fmt.Println(p)
-	p.SetInfo("爱白菜1", "小昆虫1")
+	// p.SetInfo("爱白菜1", "小昆虫1")
 	// fmt.Println(p)
 
 	// mypkg.test_goroute1()
@@ -77,7 +77,15 @@ func main() {
 	// 	arr := GenerateGroupNum(5, 42)
 	// 	fmt.Println(arr)
 	// }
-	fmt.Printf("%d", time.Minute)
+	// fmt.Printf("%d", time.Minute)
+	for cnt := 0; cnt < 100; cnt++ {
+		arr := make([]int, 7)
+		for i := 0; i < 5; i++ {
+			idx := rand.Int() % 7
+			arr[idx]++
+		}
+		fmt.Println(arr)
+	}
 }
 
 // GenerateGroupNum GenerateGroupNum
