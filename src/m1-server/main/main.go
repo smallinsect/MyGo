@@ -9,7 +9,8 @@ import (
 
 	// "m1-server/player"
 	// "m1-server/TestChannel"
-	"m1-server/TestList"
+	// "m1-server/TestList"
+	"m1-server/TestTime"
 	"math/rand"
 	"time"
 )
@@ -101,10 +102,9 @@ func main() {
 	// 	fmt.Println(arr)
 	// }
 	// testchannel.ChannelFunc01()
-	defer fmt.Println(1111)
-	defer fmt.Println(2222)
-	defer fmt.Println(3333)
-	testlist.ListFunc()
+
+	// testlist.ListFunc()
+	testtime.TimeFunc01()
 }
 
 // GenerateGroupNum GenerateGroupNum
