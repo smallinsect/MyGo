@@ -3,12 +3,26 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"runtime/pprof"
+
 	// "m1-server/player"
+	// "m1-server/TestChannel"
+	"m1-server/TestList"
 	"math/rand"
 	"time"
 )
 
 func main() {
+	//添加记录CPU使用率的文件--------------------
+	cpuf, err1 := os.Create("cpu_profile")
+	if err1 != nil {
+		log.Fatal(err1)
+	}
+	pprof.StartCPUProfile(cpuf)
+	defer pprof.StopCPUProfile()
+	//添加记录CPU使用率的文件--------------------
 	fmt.Println("Hello World!")
 	// var p player.Player
 
@@ -78,14 +92,19 @@ func main() {
 	// 	fmt.Println(arr)
 	// }
 	// fmt.Printf("%d", time.Minute)
-	for cnt := 0; cnt < 100; cnt++ {
-		arr := make([]int, 7)
-		for i := 0; i < 5; i++ {
-			idx := rand.Int() % 7
-			arr[idx]++
-		}
-		fmt.Println(arr)
-	}
+	// for cnt := 0; cnt < 100; cnt++ {
+	// 	arr := make([]int, 7)
+	// 	for i := 0; i < 5; i++ {
+	// 		idx := rand.Int() % 7
+	// 		arr[idx]++
+	// 	}
+	// 	fmt.Println(arr)
+	// }
+	// testchannel.ChannelFunc01()
+	defer fmt.Println(1111)
+	defer fmt.Println(2222)
+	defer fmt.Println(3333)
+	testlist.ListFunc()
 }
 
 // GenerateGroupNum GenerateGroupNum

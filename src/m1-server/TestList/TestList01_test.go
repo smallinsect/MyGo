@@ -1,4 +1,4 @@
-package testchannel
+package testlist
 
 import "testing"
 

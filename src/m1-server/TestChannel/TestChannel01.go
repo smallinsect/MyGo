@@ -1,6 +1,10 @@
 package testchannel
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
 //ChannelFunc ChannelFunc
 func ChannelFunc() {
@@ -19,4 +23,22 @@ func ChannelFunc() {
 		}
 		fmt.Println("x end ....")
 	}()
+}
+
+func ChannelFunc01() {
+	ch := make(chan int, 50)
+	wg := new(sync.WaitGroup)
+	for i := 0; i < 100; i++ {
+		wg.Add(1)
+		ch <- i
+		go func(val int) {
+			defer func() {
+				wg.Done()
+				x := <-ch
+				fmt.Println("end x=", x)
+			}()
+			fmt.Println("start i=", val)
+			time.Sleep(time.Second)
+		}(i)
+	}
 }
