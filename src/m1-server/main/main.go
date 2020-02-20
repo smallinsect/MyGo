@@ -3,15 +3,34 @@ package main
 
 import (
 	"fmt"
+<<<<<<< HEAD
 	testgoroutine "m1-server/TestGoroutine"
 
 	// "m1-server/player"
 
+=======
+	"log"
+	"os"
+	"runtime/pprof"
+
+	// "m1-server/player"
+	// "m1-server/TestChannel"
+	// "m1-server/TestList"
+	"m1-server/TestTime"
+>>>>>>> 98e0328f59a90806ae8310e159870ee57a7c5c75
 	"math/rand"
 	"time"
 )
 
 func main() {
+	//添加记录CPU使用率的文件--------------------
+	cpuf, err1 := os.Create("cpu_profile")
+	if err1 != nil {
+		log.Fatal(err1)
+	}
+	pprof.StartCPUProfile(cpuf)
+	defer pprof.StopCPUProfile()
+	//添加记录CPU使用率的文件--------------------
 	fmt.Println("Hello World!")
 	// var p player.Player
 
@@ -89,10 +108,17 @@ func main() {
 	// 	}
 	// 	fmt.Println(arr)
 	// }
+<<<<<<< HEAD
 	// testprofile.ProfileFunc()
 	// testprofile.ProfileFunc01()
 	// testgoroutine.TestGoroutine()
 	testgoroutine.TestWaitGroup()
+=======
+	// testchannel.ChannelFunc01()
+
+	// testlist.ListFunc()
+	testtime.TimeFunc01()
+>>>>>>> 98e0328f59a90806ae8310e159870ee57a7c5c75
 }
 
 // GenerateGroupNum GenerateGroupNum
