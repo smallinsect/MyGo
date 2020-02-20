@@ -3,7 +3,10 @@ package main
 
 import (
 	"fmt"
+	testgoroutine "m1-server/TestGoroutine"
+
 	// "m1-server/player"
+
 	"math/rand"
 	"time"
 )
@@ -78,14 +81,18 @@ func main() {
 	// 	fmt.Println(arr)
 	// }
 	// fmt.Printf("%d", time.Minute)
-	for cnt := 0; cnt < 100; cnt++ {
-		arr := make([]int, 7)
-		for i := 0; i < 5; i++ {
-			idx := rand.Int() % 7
-			arr[idx]++
-		}
-		fmt.Println(arr)
-	}
+	// for cnt := 0; cnt < 100; cnt++ {
+	// 	arr := make([]int, 7)
+	// 	for i := 0; i < 5; i++ {
+	// 		idx := rand.Int() % 7
+	// 		arr[idx]++
+	// 	}
+	// 	fmt.Println(arr)
+	// }
+	// testprofile.ProfileFunc()
+	// testprofile.ProfileFunc01()
+	// testgoroutine.TestGoroutine()
+	testgoroutine.TestWaitGroup()
 }
 
 // GenerateGroupNum GenerateGroupNum
