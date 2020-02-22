@@ -22,7 +22,7 @@ func main() {
 	// testdemo.ArrayFunc02()
 	// testdemo.ArrayFunc03()
 
-	testdemo.MapFunc01()
+	testdemo.MapFunc03()
 }
 
 // GenerateGroupNum GenerateGroupNum
