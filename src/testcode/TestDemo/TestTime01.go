@@ -1,4 +1,4 @@
-package testtime
+package testdemo
 
 import (
 	"fmt"

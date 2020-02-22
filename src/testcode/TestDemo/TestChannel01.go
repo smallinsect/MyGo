@@ -1,4 +1,4 @@
-package testchannel
+package testdemo
 
 import (
 	"fmt"
@@ -25,6 +25,7 @@ func ChannelFunc() {
 	}()
 }
 
+// ChannelFunc01 ...
 func ChannelFunc01() {
 	ch := make(chan int, 50)
 	wg := new(sync.WaitGroup)

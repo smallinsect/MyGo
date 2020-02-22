@@ -1,37 +1,71 @@
-package testarray
+package testdemo
 
 import "fmt"
 
-//ArrayFunc ArrayFunc
+// ArrayFunc ...
 func ArrayFunc() {
-	arr := make([]int, 0)
-	fmt.Println(len(arr))
-	fmt.Println(arr)
-	for i := 0; i < 10; i++ {
-		arr = append(arr, i)
+	// 定义一个数组
+	var hens [6]float64
+	//给每隔数组元素赋值
+	hens[0] = 1.1
+	hens[1] = 2.2
+	hens[2] = 3.3
+	hens[3] = 4.4
+	hens[4] = 5.5
+	hens[5] = 6.6
+	//遍历数组，求出总体和
+	totalWeight := 0.0
+	for i := 0; i < len(hens); i++ {
+		totalWeight += hens[i]
 	}
-	fmt.Println(len(arr))
-	fmt.Println(arr)
+	//求出平均体重
+	avgWeight := fmt.Sprintf("%.2f", totalWeight/6)
+	fmt.Printf("totalWeight=%v avgWeight=%v\n", totalWeight, avgWeight)
+	fmt.Println(hens)
+	fmt.Printf("数组首地址%p\n", &hens)
 }
 
-// User User
-type User struct {
-	Name string
-}
-
-// ArrayFunc01 ArrayFunc01
+// ArrayFunc01 ...
 func ArrayFunc01() {
-	mus := make([]*User, 0)
-	var matchNum int = 1
-	if len(mus) == 0 {
-		mus = getMatchList()
-		matchNum++
+	//从终端输入5个成绩
+	var score [5]float64
+	for i := 0; i < 5; i++ {
+		fmt.Printf("请输入%d个元素的值\n", i+1)
+		fmt.Scanln(&score[i])
 	}
-	fmt.Println(mus)
-	fmt.Println(matchNum)
+	fmt.Println(score)
 }
 
-func getMatchList() (r []*User) {
-	r = make([]*User, 0)
-	return
+// ArrayFunc02 ... 四种初始化数组方式
+func ArrayFunc02() {
+	var array01 [3]int = [3]int{11, 22, 33}
+	fmt.Println("array01=", array01)
+
+	var array02 = [3]int{11, 22, 33}
+	fmt.Println("array02=", array02)
+
+	var array03 = [...]int{11, 22, 33}
+	fmt.Println("array03=", array03)
+	//类型推导，指定下标赋值
+	var array04 = [...]int{3: 11, 2: 22, 0: 33}
+	fmt.Println("array04=", array04)
+}
+
+// ArrayFunc03 ... 遍历数组
+func ArrayFunc03() {
+	strArr := [...]string{"小昆虫", "小白菜", "小东风"}
+	fmt.Println("strArr=", strArr)
+	//下标遍历数组
+	for i := 0; i < len(strArr); i++ {
+		fmt.Println("i=", i, strArr[i])
+	}
+	fmt.Println("=========================")
+	//range遍历数组
+	for index, value := range strArr {
+		fmt.Println("index=", index, "value=", value)
+	}
+	fmt.Println("=========================")
+	for _, value := range strArr {
+		fmt.Println("value=", value)
+	}
 }

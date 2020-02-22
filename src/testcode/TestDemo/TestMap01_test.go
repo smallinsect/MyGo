@@ -1,4 +1,4 @@
-package testmap
+package testdemo
 
 import "testing"
 

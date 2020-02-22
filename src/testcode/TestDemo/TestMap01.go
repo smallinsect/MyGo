@@ -1,16 +1,11 @@
-package testmap
+package testdemo
 
 import (
 	"fmt"
 	"sync"
 )
 
-// Person Person
-type Person struct {
-	Name string
-}
-
-// MapFunc MapFunc
+// MapFunc ...
 func MapFunc() {
 	var m sync.Map
 	m.Store("1111", &Person{Name: "aaaaa"})
@@ -18,10 +13,10 @@ func MapFunc() {
 	m.Store("3333", &Person{Name: "ccccc"})
 
 	p, _ := m.Load("1111")
-	fmt.Println(m)
+	// fmt.Println(m)
 	fmt.Println(p)
 	m.Delete("1111")
-	fmt.Println(m)
+	// fmt.Println(m)
 	fmt.Println(p)
 
 	// m := make(map[string]*Person)
@@ -35,4 +30,9 @@ func MapFunc() {
 	// delete(m, "1111")
 	// fmt.Println(p)
 	// fmt.Println(m)
+}
+
+// MapFunc01 ...
+func MapFunc01() {
+
 }

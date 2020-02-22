@@ -4,12 +4,12 @@ package main
 import (
 	"fmt"
 	"log"
-	"m1-server/TestServer"
 	"net/http"
 	"os"
 	"os/signal"
 	"runtime/pprof"
 	"syscall"
+	testdemo "testcode/TestDemo"
 
 	"math/rand"
 	_ "net/http/pprof"
@@ -17,6 +17,42 @@ import (
 )
 
 func main() {
+	// testdemo.ArrayFunc()
+	// testdemo.ArrayFunc01()
+	// testdemo.ArrayFunc02()
+	// testdemo.ArrayFunc03()
+
+	testdemo.MapFunc01()
+}
+
+// GenerateGroupNum GenerateGroupNum
+func GenerateGroupNum(arrLen int, genNum int64) (arrNum []int64) {
+	if genNum <= 0 {
+		return
+	}
+	arrNum = make([]int64, arrLen)
+	avgNum := genNum / int64(arrLen) //平均的数量
+	spsNum := genNum % int64(arrLen) //剩余的数量
+	//平均的数量大于1 扣除1个 拿去随机
+	if avgNum > 1 {
+		avgNum = avgNum - 1
+		spsNum = spsNum + int64(arrLen)
+	}
+	//数组的基础数量
+	for idx := 0; idx < arrLen; idx++ {
+		arrNum[idx] = avgNum
+	}
+	//将未分配的数 随机到数组中
+	for i := int64(0); i < spsNum; i++ {
+		// idx := utils.RandomInt(0, arrLen-1)
+		idx := rand.Intn(arrLen)
+		arrNum[idx]++
+	}
+	return
+}
+
+// Demo ...
+func Demo() {
 	//添加记录CPU使用率的文件--------------------
 	cpuf, err1 := os.Create("cpu_profile")
 	if err1 != nil {
@@ -114,37 +150,10 @@ func main() {
 
 	// testlist.ListFunc()
 	// testtime.TimeFunc01()
-	testserver.TestServerFunc()
 
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGINT, syscall.SIGTERM)
 	sig := <-c
 	fmt.Println("server closing down signal:", sig)
 	fmt.Printf("server closing down (signal: %v)\n", sig)
-}
-
-// GenerateGroupNum GenerateGroupNum
-func GenerateGroupNum(arrLen int, genNum int64) (arrNum []int64) {
-	if genNum <= 0 {
-		return
-	}
-	arrNum = make([]int64, arrLen)
-	avgNum := genNum / int64(arrLen) //平均的数量
-	spsNum := genNum % int64(arrLen) //剩余的数量
-	//平均的数量大于1 扣除1个 拿去随机
-	if avgNum > 1 {
-		avgNum = avgNum - 1
-		spsNum = spsNum + int64(arrLen)
-	}
-	//数组的基础数量
-	for idx := 0; idx < arrLen; idx++ {
-		arrNum[idx] = avgNum
-	}
-	//将未分配的数 随机到数组中
-	for i := int64(0); i < spsNum; i++ {
-		// idx := utils.RandomInt(0, arrLen-1)
-		idx := rand.Intn(arrLen)
-		arrNum[idx]++
-	}
-	return
 }

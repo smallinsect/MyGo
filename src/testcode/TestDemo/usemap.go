@@ -2,11 +2,7 @@ package testdemo
 
 import "fmt"
 
-type Person struct {
-	Name string //名字
-	Age  int32  //年龄
-}
-
+// Usemap ...
 func Usemap() {
 	m := make(map[string]Person)
 	m["1111"] = Person{Name: "小昆虫1", Age: 1}

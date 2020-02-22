@@ -1,4 +1,4 @@
-package testlist
+package testdemo
 
 import (
 	// "container/list"
@@ -6,12 +6,7 @@ import (
 	"sync"
 )
 
-type Person struct {
-	Uid  int32
-	Name string
-}
-
-//ChannelFunc ChannelFunc
+// ListFunc ...
 func ListFunc() {
 	// var l list.List
 	var m sync.Map

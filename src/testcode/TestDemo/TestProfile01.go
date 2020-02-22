@@ -1,11 +1,12 @@
-package testprofile
+package testdemo
 
 import (
 	"context"
 	"fmt"
 	"log"
 	"net/http"
-	_ "net/http/pprof"
+
+	// "net/http/pprof"
 	"os"
 	"runtime/pprof"
 	"time"

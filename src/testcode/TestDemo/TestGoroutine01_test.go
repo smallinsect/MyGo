@@ -1,4 +1,4 @@
-package testgoroutine
+package testdemo
 
 import "testing"
 

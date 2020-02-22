@@ -1,4 +1,4 @@
-package testarray
+package testdemo
 
 import "testing"
 

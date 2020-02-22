@@ -1,8 +1,8 @@
-package testprofile
+package testdemo
 
 import "testing"
 
-func TestMapFunc(t *testing.T) {
+func TestProfileFunc(t *testing.T) {
 	ProfileFunc()
 	t.Logf("test Add succ")
 }

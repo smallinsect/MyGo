@@ -19,6 +19,7 @@ func handleConnection(conn net.Conn) {
 	}
 }
 
+// Userserver ...
 func Userserver() {
 	fmt.Println("server start ...")
 	ser, err := net.Listen("tcp", ":7777")

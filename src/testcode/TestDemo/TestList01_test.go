@@ -1,4 +1,4 @@
-package testlist
+package testdemo
 
 import "testing"
 
