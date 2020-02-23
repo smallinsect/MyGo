@@ -22,7 +22,11 @@ func main() {
 	// testdemo.ArrayFunc02()
 	// testdemo.ArrayFunc03()
 
-	testdemo.MapFunc03()
+	// testdemo.MapFunc03()
+	// testdemo.SerializeFunc()
+	// testdemo.SerializeFunc01()
+	// testdemo.SerializeFunc02()
+	testdemo.SerializeFunc03()
 }
 
 // GenerateGroupNum GenerateGroupNum
