@@ -16,7 +16,13 @@ import (
 	"time"
 )
 
+func init() {
+	fmt.Println("我是init函数")
+	fmt.Println("在main函数执行之前的init函数")
+}
+
 func main() {
+	fmt.Println("我是main函数")
 	// testdemo.ArrayFunc()
 	// testdemo.ArrayFunc01()
 	// testdemo.ArrayFunc02()
