@@ -116,3 +116,14 @@ func MapFunc03() {
 		}
 	}
 }
+
+// MapFunc04 ... map的range遍历
+func MapFunc04() {
+	m := make(map[string]string)
+	m["11111"] = "小昆虫"
+	m["22222"] = "小白菜"
+	m["33333"] = "小东风"
+	m["44444"] = "小青蛙"
+	fmt.Println("m=", m)
+	fmt.Println("len=", len(m))
+}
