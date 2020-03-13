@@ -41,9 +41,22 @@ func TimeFunc01() {
 func TimeFunc02() {
 	nTime := time.Now() //现在时间
 	fmt.Println(nTime)
-	fmt.Println(nTime.Unix())                                 //当前时间戳
-	fmt.Println(nTime.Add(time.Minute).Unix())                //当前时间戳+一分钟
-	fmt.Println(nTime.Add(time.Minute).Unix() - nTime.Unix()) //时差一分钟
-	fmt.Println(nTime.Add(time.Hour).Unix())                  //当前时间戳+一小时
-	fmt.Println(nTime.Add(time.Hour).Unix() - nTime.Unix())   //时差一小时
+	fmt.Println(nTime.Unix())                                   //当前时间戳
+	fmt.Println(nTime.Add(time.Second).Unix())                  //当前时间戳+1秒钟
+	fmt.Println(nTime.Add(time.Second).Unix() - nTime.Unix())   //时差1秒钟
+	fmt.Println(nTime.Add(time.Second * 2).Unix())              //当前时间戳+2秒钟
+	fmt.Println(nTime.Add(time.Second*2).Unix() - nTime.Unix()) //时差2秒钟
+
+	fmt.Println(nTime.Add(time.Minute).Unix())                  //当前时间戳+1分钟
+	fmt.Println(nTime.Add(time.Minute).Unix() - nTime.Unix())   //时差1分钟
+	fmt.Println(nTime.Add(time.Minute * 2).Unix())              //当前时间戳+2分钟
+	fmt.Println(nTime.Add(time.Minute*2).Unix() - nTime.Unix()) //时差2分钟
+
+	fmt.Println(nTime.Add(time.Hour).Unix())                  //当前时间戳+1小时
+	fmt.Println(nTime.Add(time.Hour).Unix() - nTime.Unix())   //时差1小时
+	fmt.Println(nTime.Add(time.Hour * 2).Unix())              //当前时间戳+2小时
+	fmt.Println(nTime.Add(time.Hour*2).Unix() - nTime.Unix()) //时差2小时
+
+	var t time.Duration = 60
+	fmt.Println(nTime.Add(time.Second * t).Unix())
 }
