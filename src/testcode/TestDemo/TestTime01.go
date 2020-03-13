@@ -36,3 +36,14 @@ func TimeFunc01() {
 	stamp, _ := time.ParseInLocation(timeTemplate1, t1, time.Local) //使用parseInLocation将字符串格式化返回本地时区时间
 	fmt.Println(stamp.Unix())                                       //输出：1546926630
 }
+
+//TimeFunc02 当前时间加1个小时
+func TimeFunc02() {
+	nTime := time.Now() //现在时间
+	fmt.Println(nTime)
+	fmt.Println(nTime.Unix())                                 //当前时间戳
+	fmt.Println(nTime.Add(time.Minute).Unix())                //当前时间戳+一分钟
+	fmt.Println(nTime.Add(time.Minute).Unix() - nTime.Unix()) //时差一分钟
+	fmt.Println(nTime.Add(time.Hour).Unix())                  //当前时间戳+一小时
+	fmt.Println(nTime.Add(time.Hour).Unix() - nTime.Unix())   //时差一小时
+}

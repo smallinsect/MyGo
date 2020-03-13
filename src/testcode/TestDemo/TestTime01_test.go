@@ -3,6 +3,6 @@ package testdemo
 import "testing"
 
 func TestTimeFunc(t *testing.T) {
-	TimeFunc()
+	TimeFunc02()
 	t.Logf("test Add succ")
 }
