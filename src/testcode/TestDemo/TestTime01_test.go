@@ -1,6 +1,10 @@
 package testdemo
 
-import "testing"
+import (
+	"fmt"
+	"reflect"
+	"testing"
+)
 
 func TestTimeFunc(t *testing.T) {
 	TimeFunc01()
