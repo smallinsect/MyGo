@@ -22,7 +22,7 @@ https://studygolang.com/dl
 http://liteide.org/cn/  
 编辑器  
 https://sourceforge.net/projects/liteide/files/  
-编辑器 
+编辑器  
 https://sourceforge.net/projects/liteide/  
 go中文社区  
 https://studygolang.com/  
@@ -30,3 +30,14 @@ go中文在线文档
 https://studygolang.com/pkgdoc  
 json格式检查网站  
 https://www.json.cn  
+
+
+
+|表头1 |表头2
+--------|------
+列1 |  列2
+
+| name | age | sex |
+|:----:|:----:|:----:|
+|tony |20|男|
+|lucy|21|女|

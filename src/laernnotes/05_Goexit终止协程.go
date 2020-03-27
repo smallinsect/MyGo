@@ -1,31 +1,26 @@
 // 05_Goexit终止协程
 package main
 
-import (
-	"fmt"
-	"runtime"
-)
+// func test() {
+// 	defer fmt.Println("aaaaaaaaa")
 
-func test() {
-	defer fmt.Println("aaaaaaaaa")
+// 	runtime.Goexit() //终止协程
 
-	runtime.Goexit() //终止协程
+// 	fmt.Println("bbbbbbbbbbbbb")
+// }
 
-	fmt.Println("bbbbbbbbbbbbb")
-}
+// func main() {
+// 	fmt.Println("Hello World!")
 
-func main() {
-	fmt.Println("Hello World!")
+// 	go func() {
+// 		fmt.Println("cccccccccccc")
 
-	go func() {
-		fmt.Println("cccccccccccc")
+// 		test()
 
-		test()
+// 		fmt.Println("ddddddddddss")
+// 	}()
 
-		fmt.Println("ddddddddddss")
-	}()
+// 	for {
 
-	for {
-
-	}
-}
+// 	}
+// }

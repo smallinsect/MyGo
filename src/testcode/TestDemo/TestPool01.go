@@ -2,7 +2,7 @@ package testdemo
 
 import (
 	"fmt"
-	"time"
+	"sync"
 )
 
 //PoolFunc ...
@@ -25,6 +25,11 @@ func PoolFunc() {
 type Grpool struct {
 	queue chan uint8
 	wg    *sync.WaitGroup
+}
+
+var pool = &Grpool{
+	queue: make(chan uint8),
+	wg: new(sync.WaitGroup),
 }
 
 func (gp *Grpool) Add(n int) {

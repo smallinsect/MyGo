@@ -13,7 +13,7 @@ func newTask() {
 	}
 }
 
-func main() {
+func main1() {
 	fmt.Println("Hello World!")
 
 	//创建协程并运行

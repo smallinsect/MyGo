@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func MyFunc(a int) {
+func MyFunc11(a int) {
 	fmt.Println(a)
 	a = 111
 	fmt.Println(a)
@@ -24,8 +24,8 @@ func MyFunc03(a, b, c string) {
 	fmt.Println(a, b, c)
 }
 
-func main() {
+func main111() {
 	fmt.Println("Hello World!")
-	MyFunc(333)
+	MyFunc11(333)
 	MyFunc01(11, 22)
 }

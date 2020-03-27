@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func main222() {
 	fmt.Println("Hello World!")
 
 	var p *int

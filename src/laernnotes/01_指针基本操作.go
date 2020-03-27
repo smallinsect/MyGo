@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func main3() {
 	fmt.Println("Hello World!")
 	//每一个变量有2层含义：变量的内存，和变量的地址
 	var a int

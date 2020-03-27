@@ -1,8 +1,6 @@
 package testdemo
 
 import (
-	"fmt"
-	"reflect"
 	"testing"
 )
 

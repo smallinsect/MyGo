@@ -6,12 +6,18 @@ import (
 
 // SliceFunc ...
 func SliceFunc() {
-	slice := make([]int, 0)
+	// slice := make([]int, 0)
 
-	for i := 0; i < 100000000; i++ {
-		slice = append(slice, i)
+	// for i := 0; i < 100000000; i++ {
+	// 	slice = append(slice, i)
+	// }
+	// fmt.Println(slice)
+	s := make([]int, 0)
+
+	for i := 11; i < 20; i++ {
+		s = append(s, i)
 	}
-	fmt.Println(slice)
+	fmt.Println(s)
 }
 
 // // MapFunc01 ... map的使用

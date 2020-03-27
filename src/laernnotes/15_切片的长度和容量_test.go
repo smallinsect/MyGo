@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestSlice(t *testing.T) {
 	fmt.Println("Hello World!")
 
 	a := []int{1, 2, 3, 4, 5, 6, 7}
@@ -18,4 +19,5 @@ func main() {
 	fmt.Println(s)
 	fmt.Println(len(s))
 	fmt.Println(cap(s))
+
 }

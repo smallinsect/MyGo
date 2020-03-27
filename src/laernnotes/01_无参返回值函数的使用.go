@@ -10,7 +10,7 @@ func MyFunc() {
 	fmt.Println(aaa)
 }
 
-func main() {
+func main5() {
 	fmt.Println("Hello World!")
 	//函数调用
 	MyFunc()

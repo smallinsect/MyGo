@@ -17,7 +17,7 @@ type Student struct {
 	addr   string
 }
 
-func main() {
+func main2() {
 	fmt.Println("Hello World!")
 	var s1 Student = Student{Person{"mike", 'm', 18}, 1, "bbbb"}
 	fmt.Println(s1)
