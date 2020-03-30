@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main13() {
+func TestGoroutine(t *testing.T) {
 	fmt.Println("爱白菜的小昆虫")
 	fmt.Println("word")
 }

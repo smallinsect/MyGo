@@ -17,7 +17,11 @@ func SliceFunc() {
 	for i := 11; i < 20; i++ {
 		s = append(s, i)
 	}
+	s = append(s, 111)
 	fmt.Println(s)
+	// idx := 0
+	// s = append(s[:idx], s[idx+1:]...)
+	fmt.Println(s[:1])
 }
 
 // // MapFunc01 ... map的使用

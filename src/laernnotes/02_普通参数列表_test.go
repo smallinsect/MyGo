@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
 func MyFunc11(a int) {
@@ -24,7 +25,8 @@ func MyFunc03(a, b, c string) {
 	fmt.Println(a, b, c)
 }
 
-func main111() {
+// 测试普通函数
+func TestFunc01(t *testing.T) {
 	fmt.Println("Hello World!")
 	MyFunc11(333)
 	MyFunc01(11, 22)

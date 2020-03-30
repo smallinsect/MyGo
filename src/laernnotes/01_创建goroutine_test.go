@@ -13,7 +13,7 @@ func newTask() {
 	}
 }
 
-func main1() {
+func TestGoroutine(t *testing.T) {
 	fmt.Println("Hello World!")
 
 	//创建协程并运行

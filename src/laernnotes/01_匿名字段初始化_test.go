@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
 type Person struct {
@@ -17,7 +18,8 @@ type Student struct {
 	addr   string
 }
 
-func main2() {
+// 测试匿名字段
+func TestAnonymous(t *testing.T) {
 	fmt.Println("Hello World!")
 	var s1 Student = Student{Person{"mike", 'm', 18}, 1, "bbbb"}
 	fmt.Println(s1)

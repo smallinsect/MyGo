@@ -3,9 +3,11 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main3() {
+// 测试指针
+func TestPointer(t *testing.T) {
 	fmt.Println("Hello World!")
 	//每一个变量有2层含义：变量的内存，和变量的地址
 	var a int
