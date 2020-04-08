@@ -202,6 +202,7 @@ func TestTimer04(t *testing.T) {
 
 	// <-timer.C
 	timer.Stop()
+	timer.Reset()
 	fmt.Println("timer.Stop()")
 	for {
 
