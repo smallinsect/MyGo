@@ -1,16 +1,4 @@
 # MyGo
-## xine
-# Go使用命令
-go tool pprof 程序exe cpu_profile  
-web 打开浏览器查看  
-top----- 在profile 中输入top，会列出来几个最耗时的操作  
-peek,list 妙用  
-peek 是用来查询 函数名字的(这个名字是list需要使用的名字，并不完全等于函数名)  
-list 是用来将函数时间消耗列出来的  
-1）list main.main  
-peek findMapMax (因为根据1可以看出来消耗都在 findMapMax)  
-list main.findMapMax (根据2可以看出来名字是 main.findMapMax)  
-
 # Go学习网址
 1. 安装包下载地址为：
     * https://golang.org/dl/
@@ -36,6 +24,17 @@ list main.findMapMax (根据2可以看出来名字是 main.findMapMax)
     * go test -v  wechat_test.go wechat.go
 2. 测试单个方法
     * go test -v -test.run TestRefreshAccessToken
+
+# Go使用性能命令
+1. go tool pprof 程序exe cpu_profile
+    * web 打开浏览器查看
+    * top----- 在profile 中输入top，会列出来几个最耗时的操作
+    * peek,list 妙用
+    * peek 是用来查询 函数名字的(这个名字是list需要使用的名字，并不完全等于函数名)  
+    * list 是用来将函数时间消耗列出来的
+    * 1）list main.main  
+    * peek findMapMax (因为根据1可以看出来消耗都在 findMapMax)  
+    * list main.findMapMax (根据2可以看出来名字是 main.findMapMax)  
 
 |表头1 |表头2
 --------|------
