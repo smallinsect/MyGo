@@ -202,7 +202,7 @@ func TestTimer04(t *testing.T) {
 
 	// <-timer.C
 	timer.Stop()
-	timer.Reset()
+	timer.Reset(1 * time.Second)
 	fmt.Println("timer.Stop()")
 	for {
 
@@ -219,5 +219,30 @@ func TestTimer05(t *testing.T) {
 	fmt.Println(ti.Format(TIME_LAYOUT), ti.Unix())
 	fmt.Println(stime.Format(TIME_LAYOUT), stime.Unix())
 	fmt.Println(ti.Unix() - stime.Unix())
+	t.Log("suc ...")
+}
+
+// 测试定时器执行的函数，重新创建，是否失效
+func TestTimer06(t *testing.T) {
+
+	fmt.Println("0", time.Now().Format(TIME_LAYOUT))
+	ch := make(chan int)
+	timer := time.AfterFunc(3*time.Second, func() {
+		fmt.Println("timer 1", time.Now().Format(TIME_LAYOUT))
+		ch <- 1
+	})
+	time.Sleep(1 * time.Second)
+	timer = time.AfterFunc(4*time.Second, func() {
+		fmt.Println("timer 2", time.Now().Format(TIME_LAYOUT))
+		ch <- 2
+	})
+	timer.Reset(5 * time.Second)
+	fmt.Println("3", time.Now().Format(TIME_LAYOUT))
+
+	select {
+	case <-ch:
+		fmt.Println("4", time.Now().Format(TIME_LAYOUT))
+		break
+	}
 	t.Log("suc ...")
 }
