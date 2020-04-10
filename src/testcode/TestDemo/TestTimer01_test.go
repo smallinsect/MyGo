@@ -246,3 +246,18 @@ func TestTimer06(t *testing.T) {
 	}
 	t.Log("suc ...")
 }
+
+// 测试定时器执行的函数，停止后，是否为空
+func TestTimer07(t *testing.T) {
+
+	ch := make(chan int)
+	timer := time.AfterFunc(3*time.Second, func() {
+		fmt.Println("timer 1", time.Now().Format(TIME_LAYOUT))
+		ch <- 1
+	})
+	fmt.Printf("%+v\n", timer)
+	timer.Stop()
+	fmt.Printf("%+v\n", timer)
+	<-ch
+	t.Log("suc ...")
+}

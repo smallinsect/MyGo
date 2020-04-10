@@ -21,9 +21,9 @@
 
 # Go常用命令
 1. 测试单个文件，一定要带上被测试的原文件
-    * go test -v  wechat_test.go wechat.go
+    * go test -v slice_test.go slice.go
 2. 测试单个方法
-    * go test -v -test.run TestRefreshAccessToken
+    * go test -v -test.run TestFunc01
 
 # Go使用性能命令
 1. go tool pprof 程序exe cpu_profile
@@ -32,15 +32,12 @@
     * peek,list 妙用
     * peek 是用来查询 函数名字的(这个名字是list需要使用的名字，并不完全等于函数名)  
     * list 是用来将函数时间消耗列出来的
-    * 1）list main.main  
+    * list main.main  
     * peek findMapMax (因为根据1可以看出来消耗都在 findMapMax)  
     * list main.findMapMax (根据2可以看出来名字是 main.findMapMax)  
 
-|表头1 |表头2
---------|------
-列1 |  列2
+# Go常用代码注意问题
+1. 定时器
+    * t := time.AfterFunc的t.C是nil值
 
-| name | age | sex |
-|:----:|:----:|:----:|
-|tony |20|男|
-|lucy|21|女|
+
