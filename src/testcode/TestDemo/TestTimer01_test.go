@@ -2,6 +2,9 @@ package testdemo
 
 import (
 	"fmt"
+	"os"
+	"os/signal"
+	"syscall"
 	"testing"
 	"time"
 )
@@ -260,4 +263,25 @@ func TestTimer07(t *testing.T) {
 	fmt.Printf("%+v\n", timer)
 	<-ch
 	t.Log("suc ...")
+}
+
+// 测试定时器
+func TestTimer08(t *testing.T) {
+	fmt.Println("timer 1", time.Now().Format(TIME_LAYOUT))
+	tifunc := time.AfterFunc(3*time.Second, func() {
+		fmt.Println("timer 2", time.Now().Format(TIME_LAYOUT))
+	})
+	time.Sleep(1 * time.Second)
+	fmt.Println("timer 3", time.Now().Format(TIME_LAYOUT))
+	// tifunc.Stop()
+	tifunc = time.AfterFunc(3*time.Second, func() {
+		fmt.Println("timer 4", time.Now().Format(TIME_LAYOUT))
+	})
+
+	time.Sleep(10 * time.Second)
+	tifunc.Stop()
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGINT, syscall.SIGTERM)
+	sig := <-c
+	t.Log("测试成功....", sig)
 }
