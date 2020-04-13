@@ -1,14 +1,23 @@
 package testdemo
 
-import "testing"
+import (
+	"fmt"
+	"sync"
+	"testing"
+	"time"
+)
 
 func TestTestGoroutine(t *testing.T) {
 	TestGoroutine()
 	t.Log("test Add succ")
 }
 
+type value struct {
+	mu    sync.Mutex
+	value int
+}
+
 func TestTestGoroutine01(t *testing.T) {
-	TestGoroutine()
 	t.Log("test Add succ")
 
 	var wg sync.WaitGroup

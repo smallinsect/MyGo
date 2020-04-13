@@ -18,6 +18,8 @@
     * https://studygolang.com/pkgdoc
 9. json格式检查网站
     * https://www.json.cn
+10. 教程
+    * https://www.w3cschool.cn/go_internals/go_internals-dea92830.html
 
 # Go常用命令
 1. 测试单个文件，一定要带上被测试的原文件
