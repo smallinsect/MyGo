@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestStringAndChar(t *testing.T) {
 	var ch byte
 	var str string
 

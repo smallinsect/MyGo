@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestDefer(t *testing.T) {
 	//延迟调用，main结束前调用，类似析构函数
 	defer fmt.Println("Hello2")
 

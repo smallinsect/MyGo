@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestComplex(t2 *testing.T) {
 	//声明变量
 	var t complex128
 	t = 2.1 + 3.14i

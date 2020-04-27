@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestStringType(t *testing.T) {
 	var str1 string // 声明变量
 	str1 = "abc"
 	fmt.Println("str1 = ", str1)

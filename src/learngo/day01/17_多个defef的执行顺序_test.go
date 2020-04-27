@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
 func test(x int) {
@@ -10,7 +11,7 @@ func test(x int) {
 	fmt.Println(result)
 }
 
-func main() {
+func TestDefers(t *testing.T) {
 	defer fmt.Println("aaaaaaa")
 	defer fmt.Println("bbbbbbb")
 

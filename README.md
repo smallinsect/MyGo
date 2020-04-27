@@ -1,7 +1,9 @@
 # MyGo
 # Go学习网址
 1. 安装包下载地址为：
-    * https://golang.org/dl/
+
+* https://golang.org/dl/
+
 2. 如果打不开可以使用这个地址：
     * https://golang.google.cn/dl/
 3. Go 安装包下载

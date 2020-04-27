@@ -3,11 +3,12 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
 //定义一个全局变量
 var a int
 
-func main() {
+func TestQuanju(t *testing.T) {
 	fmt.Println(a)
 }

@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestStringVar(t *testing.T) {
 	var ch byte //声明字符类型
 	ch = 97
 	//格式化输出，%c %d

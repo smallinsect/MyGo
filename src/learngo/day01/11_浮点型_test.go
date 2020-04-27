@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestFloat(t *testing.T) {
 	//1、声明变量
 	var f1 float32 = 3.124
 	fmt.Println("f1=", f1)

@@ -3,9 +3,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestNoDefer(t *testing.T) {
 	fmt.Println("Hello World!")
 
 	a := 1
