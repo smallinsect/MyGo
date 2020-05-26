@@ -5,9 +5,13 @@
 * https://golang.org/dl/
 
 2. 如果打不开可以使用这个地址：
-    * https://golang.google.cn/dl/
+```
+https://golang.google.cn/dl/
+```
 3. Go 安装包下载
-    * https://studygolang.com/dl  
+```
+https://studygolang.com/dl
+```
 4. 编辑器源码
     * http://liteide.org/cn/  
 5. 编辑器
@@ -21,7 +25,20 @@
 9. json格式检查网站
     * https://www.json.cn
 10. 教程
-    * https://www.w3cschool.cn/go_internals/go_internals-dea92830.html
+```
+https://www.w3cschool.cn/go_internals/go_internals-dea92830.html
+```
+下载包的地址
+```
+https://github.com/golang/go
+https://github.com/golang/text
+
+https://github.com/golang/time.git
+
+
+```
+
+
 
 # Go常用命令
 1. 测试单个文件，一定要带上被测试的原文件
