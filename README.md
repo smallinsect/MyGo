@@ -40,6 +40,66 @@ https://github.com/golang/time.git
 
 
 
+# Linux安装Go
+
+下载链接
+
+```
+安装包下载地址为：https://golang.org/dl/
+如果打不开可以使用这个地址：https://golang.google.cn/dl/
+```
+
+下载
+
+```shell
+# 在 ~ 下创建 go 文件夹，并进入 go 文件夹
+mkdir ~/go && cd ~/go
+下载的 go 压缩包
+wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz
+```
+
+解压
+
+```
+tar -C /usr/local -xzf go1.14.3.linux-amd64.tar.gz
+```
+
+添加环境变量
+
+```
+# 习惯用vim，没有的话可以用命令`sudo apt-get install vim`安装一个
+vim /etc/profile
+# 在最后一行添加
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+# 保存退出后source一下（vim 的使用方法可以自己搜索一下）
+source /etc/profile
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Go框架
+
+Golang服务端开发之道
+https://www.cnblogs.com/isaiah/
+https://www.cnblogs.com/isaiah/p/7259036.html
+
+
+
+
+
 # Go常用命令
 1. 测试单个文件，一定要带上被测试的原文件
     * go test -v slice_test.go slice.go
@@ -78,6 +138,49 @@ https://github.com/golang/time.git
         - 每月1号凌晨1点执行一次："0 0 1 1 * ?"
         - 在26分、29分、33分执行一次："0 26,29,33 * * * ?"
         - 每天的0点、13点、18点、21点都执行一次："0 0 0,13,18,21 * * ?"
+
+
+
+# Go代码
+
+```
+//	若使用Marshal则不会格式化，这样不方便阅读
+bytes, err := json.MarshalIndent(obj, "", " ")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
