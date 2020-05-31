@@ -80,6 +80,12 @@ source /etc/profile
 
 # Gin框架搭建
 
+官网文档
+
+```
+https://gin-gonic.com/docs/quickstart/
+```
+
 开启Go Module
 
 ```
@@ -108,6 +114,13 @@ go mod init oceanlearn.teach/ginessential
 
 ```
 go get -u github.com/gin-gonic/gin
+go get -u github.com/jinzhu/gorm
+```
+
+添加MySQL驱动
+
+```
+go get github.com/go-sql-driver/mysql
 ```
 
 
