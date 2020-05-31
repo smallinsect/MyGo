@@ -78,7 +78,37 @@ source /etc/profile
 
 
 
+# Gin框架搭建
 
+开启Go Module
+
+```
+go env -w GO111MODULE=on
+```
+
+开启代理
+
+```
+go env -w GOPROXY=https://goproxy.cn,direct
+```
+
+查看环境变量修改
+
+```
+go env
+```
+
+初始化项目模块
+
+```
+go mod init oceanlearn.teach/ginessential
+```
+
+下载Gin的依赖
+
+```
+go get -u github.com/gin-gonic/gin
+```
 
 
 
