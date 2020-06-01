@@ -78,7 +78,50 @@ source /etc/profile
 
 
 
+# Gin框架搭建
 
+官网文档
+
+```
+https://gin-gonic.com/docs/quickstart/
+```
+
+开启Go Module
+
+```
+go env -w GO111MODULE=on
+```
+
+开启代理
+
+```
+go env -w GOPROXY=https://goproxy.cn,direct
+```
+
+查看环境变量修改
+
+```
+go env
+```
+
+初始化项目模块
+
+```
+go mod init oceanlearn.teach/ginessential
+```
+
+下载Gin的依赖
+
+```
+go get -u github.com/gin-gonic/gin
+go get -u github.com/jinzhu/gorm
+```
+
+添加MySQL驱动
+
+```
+go get github.com/go-sql-driver/mysql
+```
 
 
 
