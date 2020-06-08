@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-04-29 18:09:57
+ * @LastEditTime: 2020-06-01 16:52:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \MyGo\testcode\TestDemo\TestMap01_test.go
+ */
 package testdemo
 
 import (
@@ -52,4 +60,16 @@ func TestMapFunc02(t *testing.T) {
 	// delete(m, "1111")
 	// fmt.Println(p)
 	// fmt.Println(m)
+}
+
+func TestMapFunc03(t *testing.T) {
+	m := make(map[string]string, 10)
+	m["1111"] = "aaaa"
+	fmt.Println(len(m))
+	m["1111"] = "aaaa"
+	fmt.Println(len(m))
+	m["2222"] = "bbbb"
+	fmt.Println(len(m))
+	m["3333"] = "cccc"
+	fmt.Println(len(m))
 }
