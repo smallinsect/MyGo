@@ -181,14 +181,39 @@ go mod init oceanlearn.teach/ginessential
 下载Gin的依赖
 
 ```
-go get -u github.com/gin-gonic/gin
-go get -u github.com/jinzhu/gorm
+go get -u -v github.com/gin-gonic/gin
+go get -u -v github.com/jinzhu/gorm
 ```
 
 添加MySQL驱动
 
 ```
 go get github.com/go-sql-driver/mysql
+```
+
+(2) 设置`**GO**111**MODULE**`环境变量
+
+要使用`**go** **module**` 首先要设置`**GO**111**MODULE**=on`，`**GO**111**MODULE**` 有三个值，off、on、auto，off 和 on 即关闭和开启，auto 则会根据当前目录下是否有 **go**.mod 文件来判断是否使用 modules 功能。无论使用哪种模式，**module** 功能默认不在 GOPATH 目录下查找依赖文件，所以使用 modules 功能时请设置好代理。
+
+在使用 **go** **module** 时，将 `**GO**111**MODULE**` 全局环境变量设置为 off，在需要使用的时候再开启，避免在已有项目中意外引入 **go** **module**。
+
+```bash
+$ echo export GO111MODULE=off >> ~/.zshrc
+or
+$ echo export GO111MODULE=off >> ~/.bashrc
+```
+
+**go** mod 命令的使用：
+
+```jsx
+download    download modules to local cache (下载依赖的module到本地cache))
+edit        edit go.mod from tools or scripts (编辑go.mod文件)
+graph       print module requirement graph (打印模块依赖图))
+init        initialize new module in current directory (在当前文件夹下初始化一个新的module, 创建go.mod文件))
+tidy        add missing and remove unused modules (增加丢失的module，去掉未使用的module)
+vendor      make vendored copy of dependencies (将依赖复制到vendor下)
+verify      verify dependencies have expected content (校验依赖)
+why         explain why packages or modules are needed (解释为什么需要依赖)
 ```
 
 
