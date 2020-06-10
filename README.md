@@ -34,9 +34,77 @@ https://github.com/golang/go
 https://github.com/golang/text
 
 https://github.com/golang/time.git
+```
+
+# Golang命令
+
+指定函数测试命令
+
+```
+go test -v 依赖文件 -test.run 方法名
+备注：依赖文件指的是，你在测试用例文件需要引用到的其它文件，可空格分隔填写多个
+	-v，输出方法测试的开始与结束信息
+命令行执行: 
+1、go test -coverprofile=c.out　　生成覆盖率数据
+2、go tool cover -html c.out　　生成html页面展示
+```
+
+如果依赖文件存在当前目录的比较多
+
+```
+go test -v ./ -test.run 方法名
+```
+
+使用
+
+```
+go test -v  -test.run TestCurrentLockBlock
+```
+
+测试方法
+
+```
+func TestXXXXXX(t *testing.T) {
+	// ......
+}
+```
+
+性能测试指令
+
+```
+1、IDE中直接执行
+2、命令行 go test -bench .
+3、go test -bench . -cpuprofile=cpu.out   ,  go tool pprof  生成SVG图形
 
 
 ```
+
+性能测试
+
+```
+func BenchmarkSubstr(b *testing.B) {
+	// ......
+}
+```
+
+使用
+
+```
+go test -run=xxx -bench=. -benchtime="3s" -cpuprofile profile_cpu.out
+
+go test -run=BenchmarkCurrentLockBlock -bench=. -benchtime="3s" -cpuprofile profile_cpu.out
+
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
