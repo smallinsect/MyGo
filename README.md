@@ -30,6 +30,8 @@ https://www.w3cschool.cn/go_internals/go_internals-dea92830.html
 ```
 下载包的地址
 ```
+go get github.com/go-delve/delve/cmd/dlv #下载调试包
+
 https://github.com/golang/go
 https://github.com/golang/text
 
