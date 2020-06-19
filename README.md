@@ -175,7 +175,7 @@ go env
 初始化项目模块
 
 ```
-go mod init oceanlearn.teach/ginessential
+go mod init smallinsect.com/topic
 ```
 
 下载Gin的依赖
