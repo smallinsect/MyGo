@@ -96,6 +96,6 @@ func main() {
 
 // 凌晨时间
 func ZeroTime(t time.Time) (zero_tm int64) {
-	zero_tm = time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, tLocation).Unix()
+	zero_tm = time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, time.Local).Unix()
 	return
 }
