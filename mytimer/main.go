@@ -103,8 +103,8 @@ func main() {
 
 	// 时间转字符串
 	fmt.Println("==================================")
-	lnow := now.Format(testTime)
+	lnow := now.Format(TIME_LAYOUT)
 	fmt.Println(lnow)
-	lnow = now.In(utcSh).Format(testTime)
+	lnow = now.In(utcSh).Format(TIME_LAYOUT)
 	fmt.Println(lnow)
 }
