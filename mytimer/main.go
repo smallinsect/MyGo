@@ -47,8 +47,7 @@ func main2() {
 }
 
 var (
-	layout    string = "2006-01-02 15:04:05"
-	startTime string = "2020-03-25 10:00:00"
+	testTime string = "2020-07-08 10:00:00"
 )
 
 func main() {
@@ -56,7 +55,7 @@ func main() {
 
 	// 字符串转时间，默认UTC
 	fmt.Println("==================================")
-	start, _ := time.Parse(layout, startTime)
+	start, _ := time.Parse(TIME_LAYOUT, testTime)
 	fmt.Println(start)
 	fmt.Println(start.Unix())
 	fmt.Println(start.UTC())
@@ -64,7 +63,7 @@ func main() {
 
 	// 字符串转时间，添加时区
 	fmt.Println("==================================")
-	startT, _ := time.ParseInLocation(layout, "2020-03-25 18:00:00", time.Local)
+	startT, _ := time.ParseInLocation(TIME_LAYOUT, "2020-03-25 18:00:00", time.Local)
 	fmt.Println(startT)
 	fmt.Println(startT.Unix())
 	fmt.Println(startT.UTC())
@@ -78,13 +77,14 @@ func main() {
 	fmt.Println(now.UTC())
 	fmt.Println(now.UTC().Unix())
 
-	// 现在时间，修改时区
+	// 设置现在时间
 	fmt.Println("==================================")
 	var cstSh, _ = time.LoadLocation("Asia/Shanghai") //上海
 	fmt.Println(now.In(cstSh))
 	var utcSh, _ = time.LoadLocation("UTC")
 	fmt.Println(now.In(utcSh))
 
+	// 时区
 	fmt.Println("==================================")
 	fmt.Println(time.Now().Zone())
 	fmt.Println(time.LoadLocation("Local"))                                //获取时区
@@ -92,10 +92,19 @@ func main() {
 	loc, _ := time.LoadLocation("Local")                                   //获取时区
 	fmt.Println(time.ParseInLocation("2006-01-02 15:04:05", timeStr, loc)) //使用模板在对应时区转化为time.time类型
 	fmt.Println(time.Local)
-}
 
-// 凌晨时间
-func ZeroTime(t time.Time) (zero_tm int64) {
-	zero_tm = time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, time.Local).Unix()
-	return
+	// Unix时间转时间
+	fmt.Println("==================================")
+	fmt.Println(now)
+	fmt.Println(now.Unix())
+	fmt.Println(now.UTC())
+	fmt.Println(time.Unix(now.Unix(), 0))           // Unix()转时间，默认当地时间
+	fmt.Println(time.Unix(now.Unix(), 0).In(utcSh)) //Unix转时间，设置时区
+
+	// 时间转字符串
+	fmt.Println("==================================")
+	lnow := now.Format(testTime)
+	fmt.Println(lnow)
+	lnow = now.In(utcSh).Format(testTime)
+	fmt.Println(lnow)
 }
