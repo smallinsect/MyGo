@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"oceanlearn.teach/ginessential/controller"
+	"xuqiulin.com/mygo/ginEssential/controller"
 )
 
 func main() {
