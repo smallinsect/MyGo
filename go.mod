@@ -11,5 +11,6 @@ require (
 	github.com/mailru/easyjson v0.7.1
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/stretchr/testify v1.4.0
+	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/robfig/cron.v2 v2.0.0-20150107220207-be2e0b0deed5
 )
