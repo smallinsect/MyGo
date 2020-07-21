@@ -288,7 +288,30 @@ bytes, err := json.MarshalIndent(obj, "", " ")
 
 
 
+## VSCode配置Go开发环境
 
+```
+go get -u -v github.com/golang/tools
+go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs
+go get -u -v github.com/golang/lint
+go get -u -v github.com/golang/net
+go get -u -v github.com/golang/text
+go get -u -v github.com/golang/crypto
+go get -u -v github.com/golang/sys
+go get -u -v github.com/nsf/gocode
+go get -u -v github.com/sqs/goreturns
+go get -u -v github.com/golang/lint/golint
+go get -u -v github.com/newhook/go-symbols
+go get -u -v github.com/rogpeppe/godef
+go get -u -v github.com/lukehoban/go-outline
+go get -u -v github.com/derekparker/delve/cmd/dlv
+
+go get golang.org/x/tools/cmd/goimports
+go get golang.org/x/tools/gopls
+go get golang.org/x/tools/cmd/guru
+go get golang.org/x/tools/cmd/gorename
+
+```
 
 
 
