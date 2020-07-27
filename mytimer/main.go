@@ -3,6 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
 	cron "gopkg.in/robfig/cron.v2"
@@ -50,7 +53,7 @@ var (
 	testTime string = "2020-07-08 10:00:00"
 )
 
-func main() {
+func main3() {
 	// Unix()时间戳，和时区无关。
 
 	// 字符串转时间，默认UTC
@@ -107,4 +110,20 @@ func main() {
 	fmt.Println(lnow)
 	lnow = now.In(utcSh).Format(TIME_LAYOUT)
 	fmt.Println(lnow)
+}
+
+func main() {
+	texp1 := "*/10 * * * * *"
+	t.AddFunc(texp1, func() {
+		fmt.Println("1", time.Now())
+	})
+	texp2 := "*/5 * * * * *"
+	t.AddFunc(texp2, func() {
+		fmt.Println("2", time.Now())
+	})
+
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGINT, syscall.SIGTERM)
+	sig := <-c
+	fmt.Println("server closing down signal:", sig)
 }
