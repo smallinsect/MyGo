@@ -14,15 +14,17 @@ https://github.com/protocolbuffers/protobuf/tree/master/src
 
 
 
+# 前锋教育笔记
+
 Github地址
 
 - https://github.com/golang/protobuf
 
-安装protobuf编译器
+选择适合自己系统的protobuf编译器
 
 - https://github.com/protocolbuffers/protobuf/releases
 
-下载源码
+安装Go下载源码
 
 ```
 go get -u -v github.com/golang/protobuf/protoc-gen-go
