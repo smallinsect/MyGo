@@ -113,12 +113,14 @@ func main3() {
 }
 
 func main() {
-	texp1 := "*/10 * * * * *"
+	texp1 := "TZ=UTC */1 * 9 * * *"
 	t.AddFunc(texp1, func() {
-		fmt.Println("1", time.Now())
+		fmt.Println("1", time.Now().UTC())
+		fmt.Println("2", time.Now())
 	})
 	texp2 := "*/5 * * * * *"
 	t.AddFunc(texp2, func() {
+		fmt.Println("1", time.Now().UTC())
 		fmt.Println("2", time.Now())
 	})
 
