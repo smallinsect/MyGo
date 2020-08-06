@@ -6,3 +6,9 @@ message Order {
     optional int64 num = 2;// optional可选
     repeated string timestamp = 3;// repeated可重复
 }
+
+message Person {
+    required string name = 1;
+    required int32 age = 2;
+    required string from = 3;
+}
