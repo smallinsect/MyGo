@@ -55,19 +55,35 @@ From: proto.String("中国"),
 // 序列化
 msgDataEncoding, err := proto.Marshal(msgTest)
 if err != nil {
-fmt.Println(err)
-return
+    fmt.Println(err)
+    return
 }
 
 msgEntity := example.Person{}
 // 反序列化
 err = proto.Unmarshal(msgDataEncoding, &msgEntity)
 if err != nil {
-fmt.Println(err)
-return
+    fmt.Println(err)
+    return
 }
 fmt.Println("姓名：", msgEntity.GetName())
 fmt.Println("年龄：", msgEntity.GetAge())
 fmt.Println("国籍：", msgEntity.GetFrom())
+```
+
+# 语法
+
+```
+syntax = "proto3";
+option go_package = ".;example";
+package example;
+
+// message 消息类型
+message User {
+    string name = 1;
+    int32 age   = 2;
+    string from = 3;
+    int64 price = 4;
+}
 ```
 
