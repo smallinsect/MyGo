@@ -3,6 +3,7 @@ module xuqiulin.com/mygo
 go 1.13
 
 require (
+	9fans.net/go v0.0.2 // indirect
 	github.com/BurntSushi/toml v0.3.1
 	github.com/easierway/concurrent_map v0.0.0-20190103024436-7073b0dd7e95
 	github.com/gin-gonic/gin v1.6.3

@@ -10,14 +10,14 @@ import (
 type ProxyHandler struct {
 }
 
-func (*ProxyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (ProxyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("1111111"))
 }
 
 func main() {
 	c := make(chan os.Signal)
 
-	http.ListenAndServe("8080", &ProxyHandler{})
+	http.ListenAndServe(":8080", ProxyHandler{})
 
 	signal.Notify(c, os.Interrupt)
 	s := <-c

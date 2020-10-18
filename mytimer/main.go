@@ -53,7 +53,7 @@ var (
 	testTime string = "2020-07-08 10:00:00"
 )
 
-func main3() {
+func main() {
 	// Unix()时间戳，和时区无关。
 
 	// 字符串转时间，默认UTC
@@ -66,7 +66,7 @@ func main3() {
 
 	// 字符串转时间，添加时区
 	fmt.Println("==================================")
-	startT, _ := time.ParseInLocation(TIME_LAYOUT, "2020-03-25 18:00:00", time.Local)
+	startT, _ := time.ParseInLocation(TIME_LAYOUT, "2020-08-19 00:00:00", time.Local)
 	fmt.Println(startT)
 	fmt.Println(startT.Unix())
 	fmt.Println(startT.UTC())
@@ -112,13 +112,15 @@ func main3() {
 	fmt.Println(lnow)
 }
 
-func main() {
-	texp1 := "*/10 * * * * *"
+func main3() {
+	texp1 := "TZ=UTC */1 * 9 * * *"
 	t.AddFunc(texp1, func() {
-		fmt.Println("1", time.Now())
+		fmt.Println("1", time.Now().UTC())
+		fmt.Println("2", time.Now())
 	})
 	texp2 := "*/5 * * * * *"
 	t.AddFunc(texp2, func() {
+		fmt.Println("1", time.Now().UTC())
 		fmt.Println("2", time.Now())
 	})
 
