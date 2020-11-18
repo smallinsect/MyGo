@@ -1,17 +1,16 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 	"os/signal"
+	"reflect"
 	"runtime/pprof"
 	"syscall"
-	testdemo "testcode/TestDemo"
-
-	"math/rand"
-	_ "net/http/pprof"
 	"time"
 )
 
@@ -20,18 +19,42 @@ func init() {
 	fmt.Println("在main函数执行之前的init函数")
 }
 
-func main() {
-	fmt.Println("我是main函数")
-	// testdemo.ArrayFunc()
-	// testdemo.ArrayFunc01()
-	// testdemo.ArrayFunc02()
-	// testdemo.ArrayFunc03()
+type Extend struct {
+	Tid int64 `json:"tid"`
+}
 
-	// testdemo.MapFunc03()
-	// testdemo.SerializeFunc()
-	// testdemo.SerializeFunc01()
-	// testdemo.SerializeFunc02()
-	testdemo.SerializeFunc03()
+func main() {
+	exten := "{\"Tid\": 10}"
+	var extenT Extend
+	err := json.Unmarshal([]byte(exten), &extenT)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(extenT)
+	fmt.Println(exten)
+}
+
+type Cat struct {
+}
+
+func (this *Cat) LoginRequest(req *JumpRequest) (res *JumpResponse) {
+	fmt.Printf("%+v\n", req)
+	fmt.Println("喵喵....")
+	res = &JumpResponse{
+		NameRes: "小昆虫",
+		AgeRes:  111,
+	}
+	return
+}
+
+type JumpRequest struct {
+	NameReq string
+	AgeReq  int64
+}
+
+type JumpResponse struct {
+	NameRes string
+	AgeRes  int64
 }
 
 // GenerateGroupNum GenerateGroupNum
@@ -165,4 +188,28 @@ func Demo() {
 	sig := <-c
 	fmt.Println("server closing down signal:", sig)
 	fmt.Printf("server closing down (signal: %v)\n", sig)
+}
+
+func IFunc() {
+	fmt.Println("主函数")
+	req := &JumpRequest{
+		NameReq: "小白菜",
+		AgeReq:  222,
+	}
+	in := make([]reflect.Value, 1)
+	in[0] = reflect.ValueOf(req)
+
+	cat := new(Cat)
+	t := reflect.ValueOf(cat)
+	method := t.MethodByName("LoginRequest")
+	if method.IsValid() {
+		fmt.Println("有效方法...")
+		res := method.Call(in)
+		for _, item := range res {
+			fmt.Printf("%+v\n", item)
+		}
+		fmt.Println("结束...")
+	} else {
+		fmt.Println("无效方法...")
+	}
 }
