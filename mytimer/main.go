@@ -53,7 +53,7 @@ var (
 	testTime string = "2020-07-08 10:00:00"
 )
 
-func main() {
+func main4() {
 	// Unix()时间戳，和时区无关。
 
 	// 字符串转时间，默认UTC
@@ -128,4 +128,11 @@ func main3() {
 	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGINT, syscall.SIGTERM)
 	sig := <-c
 	fmt.Println("server closing down signal:", sig)
+}
+
+func main() {
+	now := time.Now()
+	fmt.Println(now.Unix(), "当前时间")
+	fmt.Println(now.Add(-time.Hour*24).Unix(), "前一天")
+	fmt.Println(now.Add(time.Hour*24).Unix(), "明天")
 }
