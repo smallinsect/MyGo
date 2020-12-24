@@ -130,7 +130,14 @@ func main3() {
 	fmt.Println("server closing down signal:", sig)
 }
 
+func slice(a int) (r []int) {
+	r = append(r, a)
+	return
+}
+
 func main() {
+	fmt.Println(slice(1))
+	fmt.Println(slice(2))
 	now := time.Now()
 	fmt.Println(now.Unix(), "当前时间")
 	fmt.Println(now.Add(-time.Hour*24).Unix(), "前一天")

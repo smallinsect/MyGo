@@ -98,7 +98,9 @@ go test -run=BenchmarkCurrentLockBlock -bench=. -benchtime="3s" -cpuprofile prof
 
 ```
 
+# 安装调试
 
+https://github.com/go-delve/delve
 
 
 
