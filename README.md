@@ -77,8 +77,6 @@ func TestXXXXXX(t *testing.T) {
 1、IDE中直接执行
 2、命令行 go test -bench .
 3、go test -bench . -cpuprofile=cpu.out   ,  go tool pprof  生成SVG图形
-
-
 ```
 
 性能测试
@@ -152,19 +150,25 @@ source /etc/profile
 
 # Gin框架搭建
 
-官网文档
+## 官网文档
 
 ```
 https://gin-gonic.com/docs/quickstart/
 ```
 
-开启Go Module
+## 开启Go Module
 
 ```
 go env -w GO111MODULE=on
 ```
 
-开启代理
+## 关闭Go Module
+
+```
+go env -w GO111MODULE=off
+```
+
+## 开启代理
 
 ```
 go env -w GOPROXY=https://goproxy.cn,direct
@@ -290,7 +294,7 @@ bytes, err := json.MarshalIndent(obj, "", " ")
 
 
 
-## VSCode配置Go开发环境
+# VSCode配置Go开发环境
 
 ```
 go get -u -v github.com/golang/tools
@@ -307,13 +311,29 @@ go get -u -v github.com/newhook/go-symbols
 go get -u -v github.com/rogpeppe/godef
 go get -u -v github.com/lukehoban/go-outline
 go get -u -v github.com/derekparker/delve/cmd/dlv
+go get -u -v github.com/lukehoban/go-find-references
 
-go get golang.org/x/tools/cmd/goimports
-go get golang.org/x/tools/gopls
-go get golang.org/x/tools/cmd/guru
-go get golang.org/x/tools/cmd/gorename
+go get -u -v sourcegraph.com/sqs/goreturns
 
+go get -u -v golang.org/x/tools/cmd/goimports
+go get -u -v golang.org/x/tools/gopls
+go get -u -v golang.org/x/tools/cmd/guru
+go get -u -v golang.org/x/tools/cmd/gorename
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
